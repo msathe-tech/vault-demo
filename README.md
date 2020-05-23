@@ -46,13 +46,12 @@ Now you have written two entries in Vault `secret/gs-vault-config` and `secret/g
 /secret/{defaultContext}/{profile}
 /secret/{defaultContext}
 ```
-
-1. Spring Cloud Vault constructs a Vault context path from `spring.application.name` 
+2. Spring Cloud Vault constructs a Vault context path from `spring.application.name` 
    which is `gs-vault-config`
-2. appends the profile name (`--spring.profiles.active=cloud`) so enabling the 
+3. appends the profile name (`--spring.profiles.active=cloud`) so enabling the 
    cloud profile will fetch additionally configuration properties from 
    `secret/gs-vault-config/cloud`, 
-3. Here, prefix of the configuration property is `example`
+4. Here, prefix of the configuration property is `example`
 Note that this is used in the configuration class as **@ConfigurationProperties("example")**
 
 ## Note on use of `bootstrap.properties` instead of `application.properties`
