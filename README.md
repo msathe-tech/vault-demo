@@ -39,6 +39,14 @@ vault kv put secret/gs-vault-config/cloud example.username=clouduser example.pas
 Now you have written two entries in Vault `secret/gs-vault-config` and `secret/gs-vault-config/cloud`.
 
 ### Imp things to note about the key-value pair 
+1. Note the format of the paths 
+```
+/secret/{application}/{profile}
+/secret/{application}
+/secret/{defaultContext}/{profile}
+/secret/{defaultContext}
+```
+
 1. Spring Cloud Vault constructs a Vault context path from `spring.application.name` 
    which is `gs-vault-config`
 2. appends the profile name (`--spring.profiles.active=cloud`) so enabling the 
